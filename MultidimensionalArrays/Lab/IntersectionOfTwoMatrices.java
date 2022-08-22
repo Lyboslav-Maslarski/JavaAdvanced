@@ -24,11 +24,9 @@ public class IntersectionOfTwoMatrices {
             }
         }
         for (int i = 0; i < matrix1.length; i++) {
-            char[] arr1 = matrix1[i];
-            char[] arr2 = matrix2[i];
-            for (int j = 0; j < arr1.length; j++) {
-                if (arr1[j] == arr2[j]) {
-                    System.out.print(arr1[j] + " ");
+            for (int j = 0; j < matrix1.length; j++) {
+                if (matrix1[i][j] == matrix2[i][j]) {
+                    System.out.print(matrix1[i][j] + " ");
                 } else {
                     System.out.print("*" + " ");
                 }
