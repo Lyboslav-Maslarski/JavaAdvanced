@@ -12,13 +12,15 @@ public class IntersectionOfTwoMatrices {
         char[][] matrix2 = new char[rows][cols];
         for (int i = 0; i < rows * 2; i++) {
             if (i < rows) {
-                matrix1[i] = Arrays.toString(Arrays.stream(scan.nextLine().split("\\s+")).toArray())
+                matrix1[i]=scan.nextLine().replace(" ","").toCharArray();
+               /* matrix1[i] = Arrays.toString(Arrays.stream(scan.nextLine().split("\\s+")).toArray())
                         .replace("[", "").replace("]", "").replace(",", "").replace(" ", "")
-                        .toCharArray();
+                        .toCharArray();*/
             } else {
-                matrix2[i - rows] = Arrays.toString(Arrays.stream(scan.nextLine().split("\\s+")).toArray())
+                matrix2[i-rows]=scan.nextLine().replace(" ","").toCharArray();
+                /*matrix2[i - rows] = Arrays.toString(Arrays.stream(scan.nextLine().split("\\s+")).toArray())
                         .replace("[", "").replace("]", "").replace(",", "").replace(" ", "")
-                        .toCharArray();
+                        .toCharArray();*/
             }
         }
         for (int i = 0; i < matrix1.length; i++) {
