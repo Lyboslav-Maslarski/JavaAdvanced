@@ -21,7 +21,7 @@ public class VoinaNumberGame {
             if (firstPlayerCard > secondPlayerCard) {
                 firstPlayer.add(firstPlayerCard);
                 firstPlayer.add(secondPlayerCard);
-            } else {
+            } else if (firstPlayerCard < secondPlayerCard) {
                 secondPlayer.add(firstPlayerCard);
                 secondPlayer.add(secondPlayerCard);
             }
