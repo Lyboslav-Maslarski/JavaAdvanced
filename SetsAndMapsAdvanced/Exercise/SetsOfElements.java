@@ -19,12 +19,14 @@ public class SetsOfElements {
             int num = Integer.parseInt(scan.nextLine());
             set2.add(num);
         }
-        while (!set1.isEmpty()) {
+        set1.retainAll(set2);
+        set1.forEach(integer -> System.out.print(integer + " "));
+        /*while (!set1.isEmpty()) {
             int firstNum = set1.iterator().next();
             set1.remove(firstNum);
             if (set2.contains(firstNum)) {
                 System.out.print(firstNum + " ");
             }
-        }
+        }*/
     }
 }
