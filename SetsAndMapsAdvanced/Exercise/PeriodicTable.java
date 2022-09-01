@@ -6,11 +6,6 @@ import java.util.stream.Collectors;
 public class PeriodicTable {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        //4
-        //Ce O
-        //Mo O Ce
-        //Ee
-        //Mo
         int n = Integer.parseInt(scan.nextLine());
         Set<String> elements = new TreeSet<>();
         while (n-- > 0) {
