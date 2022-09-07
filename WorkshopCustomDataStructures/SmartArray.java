@@ -1,4 +1,4 @@
-package WorkshopCustomDataStructures.SmartArray;
+package WorkshopCustomDataStructures;
 
 import java.util.function.Consumer;
 

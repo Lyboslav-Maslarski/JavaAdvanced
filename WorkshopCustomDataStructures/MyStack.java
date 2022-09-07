@@ -1,4 +1,4 @@
-package WorkshopCustomDataStructures.MyStack;
+package WorkshopCustomDataStructures;
 
 import java.util.function.Consumer;
 
