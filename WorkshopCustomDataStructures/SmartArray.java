@@ -1,14 +1,32 @@
 package WorkshopCustomDataStructures;
 
+import java.util.Iterator;
 import java.util.function.Consumer;
 
-public class SmartArray<E> {
+public class SmartArray<E> implements Iterable<E> {
     private Object[] data;
     private int size;
 
     public SmartArray() {
         this.data = new Object[4];
         this.size = 0;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new Iterator<>() {
+            private int i = 0;
+
+            @Override
+            public boolean hasNext() {
+                return i < size;
+            }
+
+            @Override
+            public E next() {
+                return get(i++);
+            }
+        };
     }
 
     public void add(E element) {
@@ -54,11 +72,6 @@ public class SmartArray<E> {
         return false;
     }
 
-    public void forEach(Consumer<E> consumer) {
-        for (int i = 0; i < this.size; i++) {
-            consumer.accept(get(i));
-        }
-    }
 
     public int size() {
         return this.size;
@@ -81,5 +94,6 @@ public class SmartArray<E> {
         if (this.size >= 0) System.arraycopy(newData, 0, data, 0, this.size);
         return newData;
     }
+
 
 }

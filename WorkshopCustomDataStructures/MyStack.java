@@ -1,8 +1,10 @@
 package WorkshopCustomDataStructures;
 
-import java.util.function.Consumer;
+import java.util.Iterator;
 
-public class MyStack<E> {
+public class MyStack<E> implements Iterable<E> {
+
+
     private static class Node<T> {
         private final T element;
         private final Node<T> prev;
@@ -17,6 +19,25 @@ public class MyStack<E> {
     private int size;
 
     public MyStack() {
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new Iterator<>() {
+            private Node<E> current = top;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public E next() {
+                E element = current.element;
+                current = current.prev;
+                return element;
+            }
+        };
     }
 
     public void push(E element) {
@@ -35,14 +56,6 @@ public class MyStack<E> {
     public E peek() {
         ensureNotEmpty();
         return this.top.element;
-    }
-
-    public void forEach(Consumer<E> consumer) {
-        Node<E> node = this.top;
-        while (node != null) {
-            consumer.accept(node.element);
-            node = node.prev;
-        }
     }
 
     public int getSize() {
