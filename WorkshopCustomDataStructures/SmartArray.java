@@ -1,7 +1,6 @@
 package WorkshopCustomDataStructures;
 
 import java.util.Iterator;
-import java.util.function.Consumer;
 
 public class SmartArray<E> implements Iterable<E> {
     private Object[] data;
@@ -72,7 +71,6 @@ public class SmartArray<E> implements Iterable<E> {
         return false;
     }
 
-
     public int size() {
         return this.size;
     }
@@ -94,6 +92,4 @@ public class SmartArray<E> implements Iterable<E> {
         if (this.size >= 0) System.arraycopy(newData, 0, data, 0, this.size);
         return newData;
     }
-
-
 }
