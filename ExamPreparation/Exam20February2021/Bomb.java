@@ -31,8 +31,7 @@ public class Bomb {
             }
             matrix[i] = line.toCharArray();
         }
-        for (int i = 0; i < commands.length; i++) {
-            String command = commands[i];
+        for (String command : commands) {
             if (command.equals("left")) {
                 if (sapperCol - 1 < 0) {
                     continue;
