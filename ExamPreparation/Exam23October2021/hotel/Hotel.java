@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hotel {
-    private String name;
-    private int capacity;
-    private List<Person> roster;
+    private final String name;
+    private final int capacity;
+    private final List<Person> roster;
 
     public Hotel(String name, int capacity) {
         this.name = name;
