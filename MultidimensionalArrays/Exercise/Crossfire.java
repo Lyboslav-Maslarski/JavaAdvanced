@@ -34,10 +34,13 @@ public class Crossfire {
                 }
             }
 
-
-            for (int i = Math.max(0, col - explosion); i <= col + explosion; i++) {
-                if (0 <= row && row < matrix.length && 0 <= i && i < matrix[row].length) {
-                    matrix[row][i] = 0;
+            if (0 <= row && row < matrix.length) {
+                int startCol = Math.max(0, col - explosion);
+                int endCol = Math.min(matrix[row].length - 1, col + explosion);
+                for (int i = startCol; i <= endCol; i++) {
+                    if (0 <= i && i < matrix[row].length) {
+                        matrix[row][i] = 0;
+                    }
                 }
             }
 
@@ -48,9 +51,8 @@ public class Crossfire {
             }
             for (int i = 0; i < newMatrix.length; i++) {
                 if (newMatrix[i].length == 0) {
-                    for (int j = i; j < newMatrix.length - 1; j++) {
-                        newMatrix[j] = newMatrix[j + 1];
-                    }
+                    if (newMatrix.length - 1 - i >= 0)
+                        System.arraycopy(newMatrix, i + 1, newMatrix, i, newMatrix.length - 1 - i);
                     newMatrix[newMatrix.length - 1] = new int[0];
                 }
             }
