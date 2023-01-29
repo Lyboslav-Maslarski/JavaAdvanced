@@ -25,7 +25,7 @@ public class NavyBattle {
         }
 
         String command = scan.nextLine();
-        while (mineCount != 3 && battleshipsCount != 3) {
+        while (mineCount < 3 && battleshipsCount < 3) {
             switch (command) {
                 case "up":
                     moveSubmarine(-1, 0);
