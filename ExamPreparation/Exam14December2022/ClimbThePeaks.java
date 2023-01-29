@@ -46,7 +46,9 @@ public class ClimbThePeaks {
                     }
                     break;
             }
-
+            if (peaksConquered.size() == 5) {
+                break;
+            }
         }
 
         if (peaksConquered.size() == 5) {
