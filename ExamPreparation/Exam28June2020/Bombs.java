@@ -6,14 +6,18 @@ import java.util.stream.Collectors;
 public class Bombs {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+
         Deque<Integer> effects = new ArrayDeque<>();
         Deque<Integer> casings = new ArrayDeque<>();
+
         Arrays.stream(scan.nextLine().split(", ")).map(Integer::parseInt).forEach(effects::offer);
         Arrays.stream(scan.nextLine().split(", ")).map(Integer::parseInt).forEach(casings::push);
+
         Map<String, Integer> bombs = new TreeMap<>();
         bombs.put("Cherry Bombs", 0);
         bombs.put("Datura Bombs", 0);
         bombs.put("Smoke Decoy Bombs", 0);
+
         while (!effects.isEmpty() && !casings.isEmpty()) {
             Integer peek = effects.peek();
             Integer pop = casings.pop();
@@ -36,10 +40,13 @@ public class Bombs {
             } else {
                 casings.push(pop - 5);
             }
+
             if (bombs.get("Cherry Bombs") >= 3 && bombs.get("Datura Bombs") >= 3 && bombs.get("Smoke Decoy Bombs") >= 3) {
                 break;
             }
+
         }
+
         if (bombs.get("Cherry Bombs") >= 3 && bombs.get("Datura Bombs") >= 3 && bombs.get("Smoke Decoy Bombs") >= 3) {
             System.out.println("Bene! You have successfully filled the bomb pouch!");
         } else {
