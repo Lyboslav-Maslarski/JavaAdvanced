@@ -19,8 +19,8 @@ public class EnergyDrinks {
         int limit = 300;
 
         while (!caffeineValues.isEmpty() && !energyDrinksValues.isEmpty()) {
-            int caffeine = caffeineValues.pop();
             int energyDrink = energyDrinksValues.poll();
+            int caffeine = caffeineValues.pop();
 
             int result = caffeine * energyDrink;
 
